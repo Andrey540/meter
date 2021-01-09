@@ -1,0 +1,6 @@
+.idea/**/*.*
+.idea/**/.*
+!.idea/inspectionProfiles/*.*
+!.idea/codeStyles/*.*
+!.idea/fileTemplates/*.*
+!.idea/scopes/*.*
