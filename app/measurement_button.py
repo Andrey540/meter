@@ -4,6 +4,7 @@ from meter import Meter
 import RPi.GPIO as GPIO
 import time
 import threading
+import os
 
 PIN_NUMBER = 27
 
@@ -12,7 +13,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIN_NUMBER, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 settings = MeasurementSettings()
-settings.initFromFile("/home/projects/settings/settings.ini")
+settings.initFromFile(os.environ.get('APP_PATH') + "/settings/settings.ini")
 meter = Meter(settings)
 
 def runMeasurements(meter):
