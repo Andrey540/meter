@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t meter
+docker build . -t meter --pull
