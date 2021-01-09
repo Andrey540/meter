@@ -7,6 +7,5 @@ ARG CMD_PATH=${APP_PATH}/cmd.sh
 
 ENV APP_PATH $APP_PATH
 COPY app $APP_PATH/
-COPY cmd.sh $APP_PATH/
 
 CMD python $APP_PATH/measurement.py
