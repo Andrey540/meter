@@ -2,5 +2,11 @@ FROM jjanzic/docker-python3-opencv:contrib-opencv-4.0.1
 
 RUN pip install --upgrade pip && pip install scipy && pip install imutils && pip install configparser && pip install opencv-python
 
-ENV APP_PATH "/usr/local/app"
-COPY app /usr/local/app/
+ARG APP_PATH=/usr/local/app
+ARG CMD_PATH=${APP_PATH}/cmd.sh
+
+ENV APP_PATH $APP_PATH
+COPY app $APP_PATH/
+COPY cmd.sh $APP_PATH/
+
+CMD python $APP_PATH/measurement.py
